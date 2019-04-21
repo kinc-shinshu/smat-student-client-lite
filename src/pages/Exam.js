@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Consumer } from "../Context";
 import { Link } from "react-router-dom";
-import "react-materialize";
 
 class Home extends Component {
   render() {

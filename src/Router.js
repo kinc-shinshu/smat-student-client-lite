@@ -13,7 +13,7 @@ class Router extends Component {
           <Route exact path="/exams/:id(\d+)" component={Exam} />
           <Route
             exact
-            path="/exams/:exam_id/questions/:id(\d+)"
+            path="/exams/:exam_id(\d+)/questions/:id(\d+)"
             component={Question}
           />
         </div>

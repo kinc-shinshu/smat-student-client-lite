@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Consumer } from "../Context";
-import { Link } from "react-router-dom";
 import { TextInput, Container, Row, Col, Button } from "react-materialize";
 import "materialize-css";
 
@@ -22,8 +21,8 @@ class Home extends Component {
         {({ setRoomNumber }) => (
           <Container>
             <Row>
-              <Col className="blue-text offset-l4">
-                <h3 className="blue-text offset-l4">ラムダです</h3>
+              <Col className="offset-l4">
+                <h3 className="blue-text">ラムダです</h3>
               </Col>
             </Row>
             <TextInput

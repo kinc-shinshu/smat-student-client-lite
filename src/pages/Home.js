@@ -1,26 +1,42 @@
 import React, { Component } from "react";
-import logo from "../images/logo.svg";
-import "./Home.css";
+import { Consumer } from "../Context";
+import { Link } from "react-router-dom";
+import { TextInput, Container, Row, Col, Button } from "react-materialize";
+import "materialize-css";
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      examNumber: ""
+    };
+  }
+
+  setExamNumber = e => {
+    this.setState({ examNumber: e.target.value });
+  };
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Consumer>
+        {({ setRoomNumber }) => (
+          <Container>
+            <Row>
+              <Col className="blue-text offset-l4">
+                <h3 className="blue-text offset-l4">ラムダです</h3>
+              </Col>
+            </Row>
+            <TextInput
+              value={this.state.examNumber}
+              onChange={this.setExamNumber}
+              label={"部屋番号を入れてね"}
+            />
+            <Button onClick={() => setRoomNumber(this.state.examNumber)}>
+              完了
+            </Button>
+          </Container>
+        )}
+      </Consumer>
     );
   }
 }

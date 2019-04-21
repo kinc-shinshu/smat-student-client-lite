@@ -6,10 +6,23 @@ import Exam from "./pages/Exam";
 import Question from "./pages/Question";
 
 class Router extends Component {
+  constructor(props) {
+    super(props);
+    this.changeText = this.changeText.bind(this);
+    this.state = {
+      text: "Hello World",
+      changeText: this.changeText
+    };
+  }
+
+  changeText(text) {
+    this.setState({ text: text });
+  }
+
   render() {
     return (
       <BrowserRouter>
-        <Provider value={"Hello World"}>
+        <Provider value={this.state}>
           <Route exact path="/" component={Home} />
           <Route exact path="/exams/:id(\d+)" component={Exam} />
           <Route

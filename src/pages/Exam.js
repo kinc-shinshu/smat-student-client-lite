@@ -7,7 +7,7 @@ class Home extends Component {
     return (
       <div className="App">
         <h1>Exam {this.props.match.params.id}</h1>
-        <Consumer>{text => <p>Context: {text}</p>}</Consumer>
+        <Consumer>{({ text }) => <p>Context: {text}</p>}</Consumer>
       </div>
     );
   }
